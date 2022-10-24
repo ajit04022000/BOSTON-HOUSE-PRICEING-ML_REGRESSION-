@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+ <style>
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ } 
+
+ body{
+  background-color: aqua;
+ }
+
+h1{
+  color: red;
+ margin: auto;
+ margin-top: 170px;
+ margin-bottom: 10px;
+ font-size: 40px;
+
+}
+
+.login{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.form{
+  margin:auto;
+  size: 10px;
+  line-height: 1.5;
+  
+}
+
+.form button{
+  margin-left: 55px;
+}
+
+.form button:hover{
+  background-color: yellow;
+}
+
+.loginn{
+  display: flex;
+  justify-content: center;
+  
+}
+
+.loginn h1{
+  color: green;
+  font-size: 23px;
+  margin: auto;
+}
+ </style>
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Boston House Price Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form class="form" action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="CRIM" placeholder="CRIM" required="required" /><br>
+    	<input type="text" name="ZN" placeholder="ZN" required="required" /><br>
+        <input type="text" name="INDUS" placeholder="INDUS" required="required" /><br>
+        <input type="text" name="CHAS" placeholder="CHAS" required="required" /><br>
+        <input type="text" name="NOX" placeholder="NOX" required="required" /><br>
+        <input type="text" name="RM" placeholder="RM" required="required" /><br>
+        <input type="text" name="Age" placeholder="Age" required="required" /><br>
+        <input type="text" name="DIS" placeholder="DIS" required="required" /><br>
+        <input type="text" name="RAD" placeholder="RAD" required="required" /><br>
+        <input type="text" name="TAX" placeholder="TAX" required="required" /><br>
+        <input type="text" name="PTRATIO" placeholder="PTRATIO" required="required" /><br>
+        <input type="text" name="B" placeholder="B" required="required" /><br>
+        <input type="text" name="LSTAT" placeholder="LSTAT" required="required" /><br>
+
+        
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+
+       
+
+    </form>
+    
+    
+
+   <br>
+   <br>
+  
+   
+ </div>
+ <div class="loginn">
+  
+ <h1>{{prediction_text}}</h1>
+</div>
+
+</body>
+</html>
